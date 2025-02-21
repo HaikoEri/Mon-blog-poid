@@ -11,56 +11,151 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-            text-align: center;
+            display: flex;
         }
         header {
-            background-color: #4CAF50;
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
             color: white;
             padding: 20px;
-            font-size: 24px;
+            font-size: 28px;
+            font-weight: bold;
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .sidebar {
+            width: 250px;
+            background: #333;
+            color: white;
+            padding-top: 60px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 15px;
+            border-bottom: 1px solid #555;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .sidebar ul li:hover {
+            background: #4CAF50;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
         }
         .container {
             max-width: 800px;
-            margin: 20px auto;
+            margin: 100px auto;
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            margin-left: 270px;
         }
-        .btn {
-            display: inline-block;
-            margin-top: 15px;
+        h1 {
+            color: #2E7D32;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        p {
+            text-align: justify;
+        }
+        .hidden {
+            display: none;
+        }
+        .back-button {
+            display: block;
+            margin: 20px auto;
             padding: 10px 20px;
             background: #4CAF50;
             color: white;
+            text-align: center;
             text-decoration: none;
             border-radius: 5px;
+            width: 150px;
+        }
+        .back-button:hover {
+            background: #2E7D32;
         }
         footer {
             margin-top: 20px;
-            padding: 10px;
+            padding: 15px;
             background: #ddd;
+            text-align: center;
+            font-weight: bold;
         }
     </style>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
 </head>
 <body>
     <header>
         Bienvenue sur "Mon Blog Bien-Être"
     </header>
-    <div class="container">
-        <h1>Perdre du poids naturellement : Conseils et Astuces</h1>
-        <p>Découvrez des méthodes simples et efficaces pour perdre du poids sans frustration, en adoptant une alimentation équilibrée et des habitudes saines.</p>
-        <a href="#articles" class="btn">Découvrir les articles</a>
+    <div class="sidebar">
+        <ul>
+            <li><a href="#" onclick="showSection('recettes')">Recettes Faciles et Rapides</a></li>
+            <li><a href="#" onclick="showSection('nutrition')">Nutrition et Bien-être</a></li>
+            <li><a href="#" onclick="showSection('exercices')">Exercices Physiques</a></li>
+            <li><a href="#" onclick="showSection('sante')">Conseils Santé</a></li>
+            <li><a href="#" onclick="showSection('motivation')">Motivation et Développement Personnel</a></li>
+        </ul>
     </div>
     <div class="container">
-        <h2>Les Bienfaits d'une Alimentation Saine</h2>
-        <p>Bien se nourrir permet de maintenir un poids équilibré, d'améliorer la digestion, d'augmenter son énergie et de renforcer son système immunitaire.</p>
-        <h3>Exemples de repas équilibrés</h3>
-        <ul>
-            <li><strong>Petit-déjeuner :</strong> Smoothie aux fruits, flocons d'avoine et amandes, yaourt nature avec graines de chia, ou tartines de pain complet avec purée d’amandes et banane.</li>
-            <li><strong>Déjeuner :</strong> Salade de quinoa, avocat, tomates cerises et filet de poulet grillé, ou omelette aux épinards et patate douce, accompagnée d’une soupe de légumes.</li>
-            <li><strong>Dîner :</strong> Poisson vapeur avec légumes rôtis et riz complet, ou tofu sauté avec légumes asiatiques et nouilles de riz, ou encore une soupe de lentilles avec du pain aux céréales.</li>
-        </ul>
+        <div id="accueil" class="content-section">
+            <h1>Bienvenue sur Mon Blog Bien-Être</h1>
+            <p>
+                Ce blog a été créé avec une mission claire : aider chacun à atteindre un bien-être physique et mental optimal grâce à une alimentation saine, une activité physique régulière et des conseils bienveillants. Il ne s'agit pas d'imposer un modèle unique, mais d'offrir un espace où chacun peut trouver des astuces adaptées à son mode de vie et à ses besoins.
+            </p>
+            <p>
+                L'énergie mise dans la conception de ce blog repose sur des valeurs fondamentales : le partage, l'entraide et la bienveillance. Trop souvent, l'univers du bien-être et de la perte de poids est teinté de jugements et de critiques. Ici, nous prônons une approche positive : chaque petit pas vers une meilleure hygiène de vie est une victoire.
+            </p>
+            <p>
+                Notre objectif est de vous fournir des informations claires et accessibles, basées sur des recherches et des expériences réelles. Nous mettons l'accent sur l'écoute de soi et l'équilibre plutôt que sur les restrictions drastiques. Une bonne alimentation et un mode de vie sain ne doivent pas être synonymes de privation, mais plutôt d'harmonie et de plaisir.
+            </p>
+            <p>
+                Grâce à des conseils pratiques et des témoignages inspirants, nous espérons vous aider à progresser à votre rythme, en adoptant des habitudes durables qui amélioreront votre bien-être général. Chaque recette, chaque exercice et chaque astuce sont pensés pour vous donner les clés d'une meilleure santé, en douceur et avec plaisir.
+            </p>
+        </div>
+        <div id="recettes" class="content-section hidden">
+            <h1>Recettes Faciles et Rapides</h1>
+            <h2>Petit Déjeuner</h2>
+            <ul>
+                <li>Overnight oats : flocons d'avoine, lait végétal, graines de chia, fruits.</li>
+                <li>Toast avocat et œuf poché.</li>
+                <li>Yaourt grec avec miel et noix.</li>
+            </ul>
+            <h2>Déjeuner</h2>
+            <ul>
+                <li>Salade de quinoa, pois chiches, feta et légumes.</li>
+                <li>Poêlée de légumes avec poulet grillé.</li>
+                <li>Wrap au saumon fumé et crudités.</li>
+            </ul>
+            <h2>Dîner</h2>
+            <ul>
+                <li>Soupe de légumes maison avec croûtons complets.</li>
+                <li>Poisson en papillote avec riz complet.</li>
+                <li>Omelette aux légumes et fromage de chèvre.</li>
+            </ul>
+            <a href="#" class="back-button" onclick="showSection('accueil')">Retour à l'accueil</a>
+        </div>
     </div>
     <footer>
         © 2025 Mon Blog Bien-Être - Tous droits réservés
